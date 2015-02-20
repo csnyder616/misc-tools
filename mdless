@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# mdless — View Markdown document in console using w3m
+
+if [-z "$1"]
+then
+	echo "Usage: $0 [filename.md]"
+	exit 1
+fi
+
+markdown "$1" | w3m -T text/html -o confirm_qq=false
+
